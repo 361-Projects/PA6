@@ -11,6 +11,7 @@
  ********************************/
 #include <stdio.h>
 #include <stdlib.h>
+#include <signal.h>
 #include <ucontext.h>
 #include <sys/mman.h>
 
@@ -25,3 +26,8 @@ struct tcb {
 };
 
 typedef struct tcb tcb;
+
+typedef struct {
+  int count;
+  tcb *q;
+} sem_t;
